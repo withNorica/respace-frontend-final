@@ -207,10 +207,10 @@ const App: React.FC = () => {
 
       const res = await generateDesign(roomImage, selectedStyle, sc);
 
-      const imgFromBackend: string | null = res.image_url || null;
+      const imgFromBackend: string | null = res.imageUrl || null; // Am schimbat image_url în imageUrl
       setResultImage(imgFromBackend);
 
-      const txt = (res.design_suggestions || "").trim();
+      const txt = (res.suggestions || "").trim(); // Am schimbat design_suggestions în suggestions
       setResultText(txt || "• Keep it simple, cohesive, and functional.");
 
       if (imgFromBackend) setPreviewUrl(null);
@@ -245,7 +245,7 @@ const App: React.FC = () => {
     return new Blob([u8], { type: mime });
   }
 
-  const handleDownloadImage = useCallback(async () => {
+  const handleImageUpload = useCallback((file: File) => {
     if (!resultImage) return;
 
     if (resultImage.startsWith("data:image/")) {
