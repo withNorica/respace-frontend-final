@@ -207,10 +207,10 @@ const App: React.FC = () => {
 
       const res = await generateDesign(roomImage, selectedStyle, sc);
 
-      const imgFromBackend: string | null = res.image_url || null;
+      const imgFromBackend: string | null = res.imageUrl || null;
       setResultImage(imgFromBackend);
 
-      const txt = (res.design_suggestions || "").trim();
+      const txt = (res.suggestions || "").trim();
       setResultText(txt || "• Keep it simple, cohesive, and functional.");
 
       if (imgFromBackend) setPreviewUrl(null);
