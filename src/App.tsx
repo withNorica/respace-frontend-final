@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
-import { generateDesignViaBackend } from "./services/backendService";
+import { generateDesign } from "./services/backendService";
 
 import Header from "./components/Header";
 import ImageUploader from "./components/ImageUploader";
@@ -205,7 +205,7 @@ const App: React.FC = () => {
       const fallback = DEFAULT_CHANGES(selectedStyle);
       const sc = specificChanges.trim() || fallback;
 
-      const res = await generateDesignViaBackend(roomImage, selectedStyle, sc);
+      const res = await generateDesign(roomImage, selectedStyle, sc);
 
       const imgFromBackend: string | null = res.image_url || null;
       setResultImage(imgFromBackend);
