@@ -1,13 +1,26 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>respace-frontend-final</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ReSpace Design</title>
+
+<!-- ACESTA ESTE SCRIPTUL IMPORTANT PENTRU TAILWIND -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+  // Script pentru a evita flash-ul la dark mode
+  if (localStorage.getItem('ai-interior-designer-theme') === 'dark' || (!('ai-interior-designer-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+</script>
+
+<style>
+  body { font-family: 'Inter', sans-serif; }
+</style>
+
+<link rel="stylesheet" href="/src/index.css">
